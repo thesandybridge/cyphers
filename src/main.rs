@@ -34,12 +34,12 @@ mod rot {
     use super::*;
 
     #[test]
-    fn test_empty_rot() {
+    fn base_case_test() {
         assert_eq!(rot(String::from("abc"), 13), String::from("nop"));
     }
 
     #[test]
-    fn test_number_rot() {
+    fn custom_rotation_test() {
         assert_eq!(rot(String::from("abc"), 1), String::from("bcd"));
     }
 
