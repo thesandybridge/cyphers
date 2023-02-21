@@ -28,17 +28,31 @@ fn rot(s: String, r: usize) -> String {
     return rot;
 }
 
+#[cfg(test)]
+mod rot {
+    // Note this useful idiom: importing names from outer (for mod tests) scope.
+    use super::*;
+
+    #[test]
+    fn test_empty_rot() {
+        assert_eq!(rot(String::from("abc"), 13), String::from("nop"));
+    }
+
+    #[test]
+    fn test_number_rot() {
+        assert_eq!(rot(String::from("abc"), 1), String::from("bcd"));
+    }
+
+}
+
+
 fn main() {
     let args = CLI::parse();
     
-    match args.rot {
-    
-        Some(n) => {
-            println!("{:?}", rot(args.string, n));
-        },
-        None => {
-            println!("{:?}", rot(args.string, 13));
-        }
-
+    if let Some(n) = args.rot {
+        println!("{:?}", rot(args.string, n));
+    } else {
+        println!("{:?}", rot(args.string, 13));
     }
+
 }
