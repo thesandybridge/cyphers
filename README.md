@@ -1,10 +1,8 @@
-# Rot
+# Cyhpher CLI
 
-A rot cypher CLI built with rust. Build the binary and execute.
-
-- accepts two arguments, string and number to rotate by.
+A collection of cyphers CLI built with rust. Build the binary and execute.
 
 ```shell
-$ ./cypher "Hello, world!"
+$ ./cypher rot "Hello, world!"
 "Uryyb, Jbeyq!"
 ```
