@@ -1,5 +1,5 @@
 [package]
-name = "rot"
+name = "cypher"
 version = "0.1.0"
 edition = "2021"
 
