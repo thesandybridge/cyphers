@@ -4,7 +4,7 @@ A collection of ciphers. A CLI built with rust. Build the binary and execute.
 
 # Installation
 
-## Linux
+## Linux & WSL
 
 The downloaded file will be located in `~/.local/bin/`
 
