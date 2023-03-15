@@ -1,4 +1,5 @@
-const ALPHABET: [char;26] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const ALPHABET: [char; 26] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const ALPHABET_UPPER: [char; 26] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
 /// Rot cyhpher algorithm.
 ///
@@ -19,19 +20,13 @@ const ALPHABET: [char;26] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', '
 /// assert_eq!(custom, String::from("bcd"));
 /// ```
 pub fn rot(s: String, r: usize) -> String {
-    let alphabet = &ALPHABET;
-
-    let upper_alphabet = alphabet
-        .iter()
-        .map(|c| c.to_ascii_uppercase())
-        .collect::<Vec<_>>();
 
     let rot = s
         .chars()
-        .map(|c| *alphabet.iter()
-             .chain(alphabet.iter())
-             .chain(upper_alphabet.iter())
-             .chain(upper_alphabet.iter())
+        .map(|c| *ALPHABET.iter()
+             .chain(ALPHABET.iter())
+             .chain(ALPHABET_UPPER.iter())
+             .chain(ALPHABET_UPPER.iter())
              .skip_while(|&x| *x != c)
              .nth(r)
              .unwrap_or(&c)
