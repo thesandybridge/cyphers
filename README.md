@@ -9,7 +9,7 @@ A collection of ciphers. A CLI built with rust. Build the binary and execute.
 The downloaded file will be located in `~/.local/bin/`
 
 ```bash
-curl -s https://thesandybridge.github.io/scripts/install.sh | bash -s cyphers cypher
+curl -s https://scripts.sandybridge.io/install.sh | bash -s cyphers cypher
 ```
 
 # Basic Usage
